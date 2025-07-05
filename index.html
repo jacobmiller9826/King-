@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sith Art Vault</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #1a1a1a;
+      --text-color: #ff3333;
+      --border-color: #660000;
+      --button-bg: #660000;
+      --button-text: #ff3333;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Press Start 2P', monospace;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        transparent,
+        transparent 2px,
+        rgba(255, 0, 0, 0.1) 3px
+      );
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    header {
+      padding: 4rem 2rem;
+      text-align: center;
+      font-size: 2rem;
+      border-bottom: 4px double var(--border-color);
+      letter-spacing: 2px;
+      text-shadow: 0 0 4px #ff0000;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .art-piece {
+      border: 4px double var(--border-color);
+      padding: 1rem;
+      background-color: rgba(255, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 0 10px #330000;
+      transition: box-shadow 0.3s;
+    }
+
+    .art-piece:hover {
+      box-shadow: 0 0 20px #660000;
+    }
+
+    .art-piece img {
+      width: 100%;
+      max-width: 400px;
+      image-rendering: pixelated;
+      border: 2px solid var(--border-color);
+      margin-bottom: 1rem;
+      filter: grayscale(100%) brightness(0.8) contrast(1.2);
+    }
+
+    .art-piece h2 {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      text-shadow: 0 0 3px #ff0000;
+    }
+
+    .art-piece p {
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .buy-button {
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+      border: 2px solid var(--border-color);
+      transition: background-color 0.2s, box-shadow 0.2s;
+      font-size: 0.75rem;
+      box-shadow: inset 0 0 4px #ff0000;
+    }
+
+    .buy-button:hover {
+      background-color: #990000;
+      box-shadow: 0 0 8px #ff0000;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.5rem;
+      border-top: 4px double var(--border-color);
+      color: #993333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    SITH ARTIFACT VAULT
+  </header>
+
+  <section class="gallery">
+
+    <div class="art-piece">
+      <img src="art1.jpg" alt="Dark Relic 1" />
+      <h2>DARK RELIC 1</h2>
+      <p>FORBIDDEN VISIONS</p>
+      <a href="https://buy.stripe.com/test_payment_link_1" class="buy-button" target="_blank">BUY – $200</a>
+    </div>
+
+    <div class="art-piece">
+      <img src="art2.jpg" alt="Dark Relic 2" />
+      <h2>DARK RELIC 2</h2>
+      <p>BLOOD AND SHADOW</p>
+      <a href="https://buy.stripe.com/test_payment_link_2" class="buy-button" target="_blank">BUY – $180</a>
+    </div>
+
+    <div class="art-piece">
+      <img src="art3.jpg" alt="Dark Relic 3" />
+      <h2>DARK RELIC 3</h2>
+      <p>THE SITH'S WHISPER</p>
+      <a href="https://buy.stripe.com/test_payment_link_3" class="buy-button" target="_blank">BUY – $250</a>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2025 YOUR NAME – JOIN THE DARK SIDE
+  </footer>
+
+</body>
+</html>
